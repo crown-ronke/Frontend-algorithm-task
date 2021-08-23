@@ -1,1 +1,31 @@
-ConvertFahrToCelsius/stylesheet.css
+// Farenheit to celsius converter
+
+const convertFahrToCelsius = (val) => {
+  let value = Number(val);
+  let vale = val;
+  let para = typeof value;
+  let parameter = typeof val;
+  if (parameter === "number" && !isNaN(value)) {
+    const f = ((value - 32) * 5) / 9;
+    return f.toFixed(4);
+  } else if (isNaN(value)) {
+    if (Array.isArray(val) || Array.length == 0) {
+      vale = `[${val}]`;
+      Array.isArray(vale);
+      if (true) parameter = "array";
+    } else if (parameter === "object") {
+      vale = JSON.stringify(val);
+    }
+    return `${vale} is not a valid number but a/an ${parameter}.`;
+  } else {
+    return `"${val}" is not a valid number but a/an ${parameter}.`;
+  }
+};
+
+console.log(convertFahrToCelsius(0));
+console.log(convertFahrToCelsius("0"));
+console.log(convertFahrToCelsius(""));
+console.log(convertFahrToCelsius([1, 2, 3]));
+console.log(convertFahrToCelsius({ twmo: 0 }));
+console.log(convertFahrToCelsius(false));
+elsius/stylesheet.css
